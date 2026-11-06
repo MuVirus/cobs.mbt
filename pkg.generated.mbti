@@ -1,0 +1,40 @@
+// Generated using `moon info`, DON'T EDIT IT
+package "MuVirus/cobs"
+
+import {
+  "moonbitlang/core/debug",
+}
+
+// Values
+pub fn decode(Bytes) -> Result[Bytes, DecodeError]
+
+pub fn encode(Bytes) -> Bytes
+
+pub fn max_encoded_len(Int32) -> Int32
+
+// Errors
+
+// Types and methods
+#derive(Eq, @debug.Debug)
+pub(all) enum DecodeError {
+  TruncatedFrame
+  TrailingData
+}
+pub fn DecodeError::equal(Self, Self) -> Bool
+pub fn DecodeError::not_equal(Self, Self) -> Bool
+pub fn DecodeError::output(Self, &Logger) -> Unit
+pub fn DecodeError::to_repr(Self) -> @debug.Repr
+pub fn DecodeError::to_string(Self) -> String
+pub impl Show for DecodeError
+
+pub(all) struct Decoder {
+  // private fields
+}
+pub fn Decoder::feed(Self, Bytes) -> Array[Bytes]
+pub fn Decoder::finish(Self) -> Result[Unit, DecodeError]
+pub fn Decoder::new() -> Self
+pub fn Decoder::push(Self, Byte) -> Bytes?
+
+// Type aliases
+
+// Traits

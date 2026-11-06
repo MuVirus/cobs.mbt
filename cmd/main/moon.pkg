@@ -1,0 +1,5 @@
+import {
+  "MuVirus/cobs" @lib,
+}
+
+pkgtype(kind: "executable")
